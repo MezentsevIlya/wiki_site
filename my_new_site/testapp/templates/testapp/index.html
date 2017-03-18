@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Wiki</title>
+    </head>
+
+    <body>
+        <form method="post" style="margin: 10">
+        {% csrf_token %}
+            <h3>Choose Unit:</h3>
+            <br>
+            <label>
+                <input type="radio" name="rad" value="one">
+                One
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="rad" value="two">
+                Two
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="rad" value="blog">
+                Blog
+            </label>
+            <br>
+            <label>
+                <input type="radio" name="rad" value="ascii">
+                Ascii Chan
+            </label>
+            <br>
+            <label>                
+                <input type="text" name="username" value="">
+                Your name
+            </label>
+            <br>
+            <input type="submit" value="Go">
+            <br>
+            <label>
+                {{ choice }}
+            </label>
+        </form>
+
+    </body>
+
+</html>

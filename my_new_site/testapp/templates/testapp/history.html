@@ -1,0 +1,30 @@
+{% extends "testapp/base.html" %}
+
+{% block controls %}
+        <a href="/testapp/_edit{{pagename}}" class="gray-link">edit</a>
+        |
+        <a href="/testapp{{pagename}}" class="gray-link">view</a>
+{% endblock %}
+
+{% load page_extras %}
+{% block content %}
+    <table class="history-table">
+    {% get_gray_style_tag pages as pp %}
+    {% for p, rowstyle in pp %}       
+        <tr class="{{rowstyle}}">
+            <td class="date-cell">
+                {% get_modified_time_format p %}
+                
+            </td>
+            
+            <td class ="content-cell">
+                {% get_100_and_replace p %}
+            </td>
+            
+            <td class ="link-cell">
+                <a href="/testapp{{p.name}}?v={% get_page_version p %}" class="gray-link">view</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "testapp/base.html" %}
+
+{% block controls %}
+    {% if username %}
+        <a href="/testapp/_edit{{page.name}}" class="gray-link">edit</a>
+        |        
+    {% endif %}
+    <a href="/testapp/_history{{page.name}}" class="gray-link">history</a>
+{% endblock %}
+
+{% block content %}
+    {{ page.content | safe }}
+{% endblock %}

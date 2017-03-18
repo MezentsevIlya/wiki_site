@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Wiki</title>
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'testapp/main.css' %}" />
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="controls">
+            {% if username %}
+                {{ username }} (<a href="/testapp/logout" class="gray-link">logout</a>)
+            {% else %}
+                <a href="/testapp/login" class="gray-link">login</a> | <a href="/testapp/signup" class="gray-link">signup</a>
+            {% endif %}
+            </div>
+
+
+            <div class="controls">
+                {% block controls %}
+                {% endblock %}
+            </div>
+
+        </div>
+
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+
+</html>

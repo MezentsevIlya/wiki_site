@@ -1,0 +1,36 @@
+<title>Login</title>
+{% extends "testapp/base.html" %}
+
+{% block content %}
+        <form method="post" style="margin: 10">
+        {% csrf_token %}
+            <h3>Login</h3>
+            <br>
+            <table>
+                <tr>
+                    <td class="label">
+                    Username
+                    </td>
+                    <td>
+                        <input type="text" name="username" value="{{ username }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">
+                    Password
+                    </td>
+                    <td>
+                        <input type="password" name="password" value="{{ password }}">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: red" class="error">
+                        {{ login_error }}
+                    </td>
+                </tr>
+            </table>    
+            
+            <br>
+            <input type="submit">
+        </form>
+{% endblock %}

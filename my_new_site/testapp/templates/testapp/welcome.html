@@ -1,0 +1,9 @@
+<title>Welcome</title>
+{% extends "testapp/base.html" %}
+
+{% block content %}
+        <form method="post" style="margin: 10">
+        {% csrf_token %}
+            <h3>Welcome, {{ username }}!</h3>
+        </form>
+{% endblock %}
